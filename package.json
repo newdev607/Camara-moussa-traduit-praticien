@@ -1,0 +1,14 @@
+{
+  "name": "camara-moussa-tradipraticien",
+  "version": "1.7.0",
+  "private": true,
+  "description": "Site bilingue modernisé, formulaire de rendez-vous et espace privé renforcé",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/admin-auth.js && node --check public/admin-dashboard.js",
+    "test": "node tests/integration-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
