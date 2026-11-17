@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>Espace privé | Camara Moussa</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="back" href="/">← Retour au site</a>
+    <section class="auth-card">
+      <div class="mark">CM</div>
+      <p class="eyebrow">CAMARA MOUSSA · TRADIPRATICIEN</p>
+      <h1 id="pageTitle">Espace privé</h1>
+      <p id="intro" class="muted">Connexion réservée au responsable du centre.</p>
+      <div id="notice" class="notice" role="status" aria-live="polite"></div>
+      <form id="setupForm" hidden>
+        <h2>Créer le compte responsable</h2>
+        <p class="muted small">À faire une seule fois sur l'appareil qui héberge le site. Choisis un mot de passe long et unique.</p>
+        <label for="newUsername">Identifiant</label>
+        <input id="newUsername" name="username" autocomplete="username" minlength="3" maxlength="40" required>
+        <label for="newPassword">Mot de passe</label>
+        <input id="newPassword" name="password" type="password" autocomplete="new-password" minlength="12" required>
+        <p class="small muted">12 caractères minimum. Ne partage jamais ce mot de passe dans WhatsApp.</p>
+        <button type="submit">Créer le compte sécurisé</button>
+      </form>
+      <form id="loginForm" hidden>
+        <label for="username">Identifiant</label>
+        <input id="username" name="username" autocomplete="username" required maxlength="40">
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Se connecter</button>
+      </form>
+      <p class="security-note">Les demandes contiennent des informations personnelles. Utilise un appareil protégé et déconnecte-toi après usage.</p>
+    </section>
+  </main>
+  <script src="/admin-auth.js"></script>
+</body>
+</html>

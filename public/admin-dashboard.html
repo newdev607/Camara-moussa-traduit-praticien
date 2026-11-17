@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>Tableau de bord | Camara Moussa</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="dashboard-body">
+  <header class="dash-header">
+    <div class="dash-brand"><span class="mini-mark">CM</span><div><strong>Camara Moussa</strong><small>Espace responsable</small></div></div>
+    <div class="header-actions"><a href="/" class="outline-button">Voir le site</a><button id="logoutButton" class="outline-button" type="button">Déconnexion</button></div>
+  </header>
+  <main class="dashboard">
+    <section class="dash-intro">
+      <div><p class="eyebrow">GESTION DU CENTRE</p><h1>Demandes de rendez-vous</h1><p class="muted">Les demandes enregistrées sur le serveur apparaissent ici.</p></div>
+      <button id="refreshButton" type="button" class="secondary-button">Actualiser</button>
+    </section>
+    <div class="stats">
+      <article><span>Total</span><strong id="totalCount">0</strong></article>
+      <article><span>En attente</span><strong id="pendingCount">0</strong></article>
+      <article><span>Confirmées</span><strong id="confirmedCount">0</strong></article>
+      <article><span>Refusées</span><strong id="declinedCount">0</strong></article>
+      <article><span>Terminées</span><strong id="completedCount">0</strong></article>
+    </div>
+    <div id="dashNotice" class="notice" role="status" aria-live="polite"></div>
+    <section class="dash-tools" aria-label="Recherche et export des rendez-vous">
+      <label class="filter-field"><span>Rechercher un nom</span><input type="search" id="searchInput" placeholder="Ex. Awa K." autocomplete="off"></label>
+      <label class="filter-field"><span>Statut</span><select id="statusFilter"><option value="tous">Tous les statuts</option><option value="en attente">En attente</option><option value="confirmée">Confirmées</option><option value="refusée">Refusées</option><option value="terminée">Terminées</option></select></label>
+      <label class="filter-field"><span>Date du rendez-vous</span><input type="date" id="dateFilter"></label>
+      <button id="clearFiltersButton" type="button" class="outline-button">Effacer les filtres</button>
+      <button id="exportButton" type="button" class="secondary-button">Exporter CSV / Excel</button>
+      <button id="printButton" type="button" class="outline-button">Imprimer / PDF</button>
+    </section>
+    <section class="admin-panel">
+      <h2>Calendrier des rendez-vous</h2><p class="muted">Tu peux modifier la date ou le moment souhaité depuis chaque fiche. La demande reste à confirmer par le centre.</p>
+      <label class="filter-field"><span>Afficher les rendez-vous du jour</span><input type="date" id="calendarDate"></label>
+      <div id="calendarList" class="calendar-list"><p class="muted">Chargement…</p></div>
+    </section>
+    <section class="admin-panel">
+      <h2>Horaires du centre</h2>
+      <p class="muted">Ces horaires sont affichés dans l’espace responsable pour aider à organiser les demandes. Vérifie toujours la disponibilité avant de confirmer.</p>
+      <div id="hoursFields" class="hours-grid"></div>
+      <button id="saveHoursButton" class="secondary-button" type="button">Enregistrer les horaires</button>
+    </section>
+    <section class="admin-panel">
+      <h2>Sécurité et sauvegardes</h2>
+      <div class="admin-utility-actions">
+        <button id="backupButton" class="secondary-button" type="button">Télécharger une sauvegarde</button>
+        <label class="outline-button file-label">Restaurer une sauvegarde JSON<input id="restoreFile" type="file" accept="application/json,.json" hidden></label>
+      </div>
+      <form id="passwordForm" class="password-form">
+        <h3>Changer le mot de passe</h3>
+        <label>Mot de passe actuel<input id="currentPassword" type="password" autocomplete="current-password" required></label>
+        <label>Nouveau mot de passe (12 caractères minimum)<input id="newPassword" type="password" autocomplete="new-password" minlength="12" required></label>
+        <button class="secondary-button" type="submit">Modifier le mot de passe</button>
+      </form>
+    </section>
+    <p class="results-line" id="resultsLine" aria-live="polite">Chargement des demandes…</p>
+    <section class="request-list" id="requestList"><p class="muted">Chargement des demandes…</p></section>
+    <p class="security-note">Confidentialité : consulte uniquement les demandes nécessaires. Évite de partager des captures d’écran contenant les noms des visiteurs.</p>
+  </main>
+  <script src="/admin-dashboard.js"></script>
+</body>
+</html>
